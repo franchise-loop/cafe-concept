@@ -15,7 +15,7 @@
         </div>
         
         <div class="columns logo shrink">
-            <a ui-sref="homePage" href="/fr/">
+            <a ui-sref="homePage" href="bishal">
                 <div class="logo-icon">
                     <img-svg src="/images/logo-demooz.svg?v=864735d2c79a398adef84e9bfe03726a" class="ng-isolate-scope"><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
                         <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="500" height="650.59192" viewBox="0 0 500 650.59193" class="svg-logo-demooz" version="1.1">
@@ -31,13 +31,13 @@
         </div>
         <ul id="main-menu" class="columns menu main-menu" ng-class="{'lateral-visible': $ctrl.isLateralMenuVisible}"> 
             <li class="menu-item ng-scope" ng-if="!$ctrl.isLogged()">
-                <a ui-sref="howItWorksPage" href="/fr/comment-ca-marche">Comment ça marche ?</a>
+                <a ui-sref="howItWorksPage" href="#">Comment ça marche ?</a>
             </li>
             <!-- end ngIf: !$ctrl.isLogged() -->
             
             <!-- ngIf: !$ctrl.isDemoozer() -->
             <li class="menu-item products ng-scope" ng-if="!$ctrl.isDemoozer()" ng-mouseenter="$ctrl.showSubmenu('allProducts')" ng-mouseleave="$ctrl.hideSubmenu('allProducts')">
-                <a ui-sref="allProducts" ng-click="$ctrl.hideSubmenu('allProducts')" href="/fr/tous-les-produits">Tous les produits</a>
+                <a ui-sref="allProducts" ng-click="$ctrl.hideSubmenu('allProducts')" href="bishal2">Tous les produits</a>
                 <ul class="submenu menu vertical" ng-class="{visible: $ctrl.isSubmenuVisible['allProducts']}">
                     <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')" ng-mouseenter="$ctrl.showSubmenu('Smartphones')" ng-mouseleave="$ctrl.hideSubmenu('Smartphones')">
                         <a ui-sref="category({localizedUrl: 'smartphones', page: null})" href="/fr/categorie/smartphones">Smartphones</a>

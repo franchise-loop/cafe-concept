@@ -1,0 +1,627 @@
+<main-header class="ng-isolate-scope">
+    <div class="flex align-middle container wait" ng-class="{transparent: $ctrl.$state.current.name === 'category',
+        'continuum': $ctrl.isContinuumPage(),
+        'wait': $ctrl.$state.current.name === 'homePage',
+        'with-cookie-banner': !$ctrl.cookiesBannerHidden,
+        'hidden-menu': $ctrl.$state.current.name === 'retailConfirmLink'
+        || $ctrl.$state.current.name === 'retailPayment'}" style="">
+        
+        <div class="responsive-menu-icon">
+            <button aria-label="toggle menu" class="phone-menu-btn" type="button" ng-click="$ctrl.toggleLateralMenu()" ng-class="{close: $ctrl.isLateralMenuVisible}">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <div class="columns logo shrink">
+            <a ui-sref="homePage" href="bishal">
+                <div class="logo-icon">
+                    <img-svg src="/images/logo-demooz.svg?v=864735d2c79a398adef84e9bfe03726a" class="ng-isolate-scope"><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+                        <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="500" height="650.59192" viewBox="0 0 500 650.59193" class="svg-logo-demooz" version="1.1">
+                            <path d="m 252.66662,0.06721 0,-0.0672078128 c -0.89027,0 -1.78055,0.0252029328 -2.67082,0.0336039028 C 249.10553,0.02520512 248.22366,2.1872e-6 247.33338,2.1872e-6 l 0,0.0672078128 C 110.68494,2.931943 -15.624583,115.31181 1.576155,251.1556 24.420886,431.57497 189.79322,611.33907 221.77584,638.52463 c 6.58466,5.60345 12.75778,8.87143 18.41856,10.56843 0.30236,0.10081 0.60472,0.19322 0.91547,0.27723 0.13438,0.042 0.26877,0.0756 0.39475,0.10921 1.48658,0.40325 3.04876,0.70569 4.68653,0.89891 l 0.008,0 c 0.6719,0.084 1.3522,0.13441 2.0493,0.16802 0.15958,0.0168 0.31916,0.0252 0.47873,0.0336 0.41994,0.008 0.83988,0.0168 1.26822,0.008 0.42834,0.008 0.85668,0 1.27662,-0.008 0.15118,-0.008 0.31076,-0.0168 0.47033,-0.0336 0.6971,-0.0336 1.3858,-0.084 2.05771,-0.16802 l 0,0 c 1.64616,-0.19322 3.20834,-0.49566 4.68653,-0.89891 0.13438,-0.0336 0.26876,-0.0672 0.40314,-0.10921 0.31075,-0.084 0.61311,-0.17642 0.91547,-0.27723 5.66079,-1.697 11.8339,-4.96498 18.41856,-10.56843 14.83228,-12.60987 58.12808,-57.73991 102.80969,-120.81444 4.63614,-6.98962 -0.48713,-13.92042 -0.48713,-13.92042 l 0.0252,0.0168 -65.33424,-95.92235 c -5.32484,-7.11563 -12.49742,-5.24221 -13.85802,-4.80536 -0.0504,0.0168 -0.0924,0.0336 -0.14278,0.0504 -0.0504,0.0168 -0.084,0.0252 -0.084,0.0252 l 0,0 c -14.60551,4.72135 -30.17688,7.30045 -46.36136,7.30045 -82.76176,0 -149.98574,-66.55254 -151.10278,-149.07533 -1.14224,-84.54743 68.67697,-154.37635 153.20248,-153.22542 82.49299,1.12574 149.01987,68.35875 149.01987,151.14197 0,40.79515 -16.17609,77.80145 -42.43913,104.98701 -5.92955,7.32565 -1.45299,14.26486 -1.12544,14.76052 l 44.7068,65.63683 c 0,0 9.8182,13.21473 20.73664,0.008 33.81356,-59.18488 62.12591,-126.30869 70.63389,-193.5333 C 515.62459,115.31181 389.31506,2.931943 252.66662,0.06721"></path>
+                        </svg>
+                    </img-svg>
+                </div>
+                <div class="logo-text">
+                    Cafe-Concept
+                    <!-- ngIf: $ctrl.isContinuumPage() -->
+                </div>
+            </a>
+        </div>
+        <ul id="main-menu" class="columns menu main-menu" ng-class="{'lateral-visible': $ctrl.isLateralMenuVisible}"> 
+            <li class="menu-item ng-scope" ng-if="!$ctrl.isLogged()">
+                <a ui-sref="howItWorksPage" href="#">Comment ça marche ?</a>
+            </li>
+            <!-- end ngIf: !$ctrl.isLogged() -->
+            
+            <!-- ngIf: !$ctrl.isDemoozer() -->
+            <li class="menu-item products ng-scope" ng-if="!$ctrl.isDemoozer()" ng-mouseenter="$ctrl.showSubmenu('allProducts')" ng-mouseleave="$ctrl.hideSubmenu('allProducts')">
+                <a ui-sref="allProducts" ng-click="$ctrl.hideSubmenu('allProducts')" href="bishal2">Tous les produits</a>
+                <ul class="submenu menu vertical" ng-class="{visible: $ctrl.isSubmenuVisible['allProducts']}">
+                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')" ng-mouseenter="$ctrl.showSubmenu('Smartphones')" ng-mouseleave="$ctrl.hideSubmenu('Smartphones')">
+                        <a ui-sref="category({localizedUrl: 'smartphones', page: null})" href="/fr/categorie/smartphones">Smartphones</a>
+                        <ul class="submenu sub-category" ng-class="{visible: $ctrl.isSubmenuVisible['Smartphones']}">
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
+                                <a ui-sref="category({localizedUrl: 'oneplus', page: null})" href="/fr/categorie/oneplus">OnePlus</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
+                                <a ui-sref="category({localizedUrl: 'xperia', page: null})" href="/fr/categorie/xperia">Xperia</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
+                                <a ui-sref="category({localizedUrl: 'wiko', page: null})" href="/fr/categorie/wiko">Wiko</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
+                                <a ui-sref="category({localizedUrl: 'nokia', page: null})" href="/fr/categorie/nokia">Nokia</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
+                                <a ui-sref="category({localizedUrl: 'blackberry', page: null})" href="/fr/categorie/blackberry">BlackBerry</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
+                                <a ui-sref="category({localizedUrl: 'asus', page: null})" href="/fr/categorie/asus">Asus</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
+                                <a ui-sref="category({localizedUrl: 'motorola', page: null})" href="/fr/categorie/motorola">Motorola</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
+                                <a ui-sref="category({localizedUrl: 'huawei', page: null})" href="/fr/categorie/huawei">Huawei</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
+                                <a ui-sref="category({localizedUrl: 'lg', page: null})" href="/fr/categorie/lg">LG</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
+                                <a ui-sref="category({localizedUrl: 'google-phones', page: null})" href="/fr/categorie/google-phones">Google</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
+                                <a ui-sref="category({localizedUrl: 'honor', page: null})" href="/fr/categorie/honor">Honor</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
+                                <a ui-sref="category({localizedUrl: 'samsung', page: null})" href="/fr/categorie/samsung">Samsung</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
+                                <a ui-sref="category({localizedUrl: 'apple', page: null})" href="/fr/categorie/apple">Apple</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Son')" ng-mouseenter="$ctrl.showSubmenu('Son')" ng-mouseleave="$ctrl.hideSubmenu('Son')">
+                        <a ui-sref="category({localizedUrl: 'son', page: null})" href="/fr/categorie/son">Son</a>
+                        <ul class="submenu sub-category" ng-class="{visible: $ctrl.isSubmenuVisible['Son']}">
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Son')">
+                                <a ui-sref="category({localizedUrl: 'ecouteurs', page: null})" href="/fr/categorie/ecouteurs">Écouteurs</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Son')">
+                                <a ui-sref="category({localizedUrl: 'casques', page: null})" href="/fr/categorie/casques">Casques</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Son')">
+                                <a ui-sref="category({localizedUrl: 'enceintes', page: null})" href="/fr/categorie/enceintes">Enceintes</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Maison')" ng-mouseenter="$ctrl.showSubmenu('Maison')" ng-mouseleave="$ctrl.hideSubmenu('Maison')">
+                        <a ui-sref="category({localizedUrl: 'maison', page: null})" href="/fr/categorie/maison">Maison</a>
+                        <ul class="submenu sub-category" ng-class="{visible: $ctrl.isSubmenuVisible['Maison']}">
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Maison')">
+                                <a ui-sref="category({localizedUrl: 'literie', page: null})" href="/fr/categorie/literie">Literie</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Maison')">
+                                <a ui-sref="category({localizedUrl: 'entretien-de-la-maison', page: null})" href="/fr/categorie/entretien-de-la-maison">Entretien de la maison</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Maison')">
+                                <a ui-sref="category({localizedUrl: 'domotique', page: null})" href="/fr/categorie/domotique">Domotique</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Maison')">
+                                <a ui-sref="category({localizedUrl: 'gros-electromenager', page: null})" href="/fr/categorie/gros-electromenager">Gros électroménager</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Maison')">
+                                <a ui-sref="category({localizedUrl: 'bricolage', page: null})" href="/fr/categorie/bricolage">Bricolage</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Maison')">
+                                <a ui-sref="category({localizedUrl: 'jardin', page: null})" href="/fr/categorie/jardin">Jardin</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Maison')">
+                                <a ui-sref="category({localizedUrl: 'cuisine', page: null})" href="/fr/categorie/cuisine">Cuisine</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Maison')">
+                                <a ui-sref="category({localizedUrl: 'economies-energie', page: null})" href="/fr/categorie/economies-energie">Économies d'énergie</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Mobilité')" ng-mouseenter="$ctrl.showSubmenu('Mobilité')" ng-mouseleave="$ctrl.hideSubmenu('Mobilité')">
+                        <a ui-sref="category({localizedUrl: 'mobility', page: null})" href="/fr/categorie/mobility">Mobilité</a>
+                        <ul class="submenu sub-category" ng-class="{visible: $ctrl.isSubmenuVisible['Mobilité']}">
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Mobilité')">
+                                <a ui-sref="category({localizedUrl: 'montres-connectees', page: null})" href="/fr/categorie/montres-connectees">Montres connectées</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Mobilité')">
+                                <a ui-sref="category({localizedUrl: 'gps', page: null})" href="/fr/categorie/gps">GPS</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Mobilité')">
+                                <a ui-sref="category({localizedUrl: 'tablettes', page: null})" href="/fr/categorie/tablettes">Tablettes</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Sport')" ng-mouseenter="$ctrl.showSubmenu('Sport')" ng-mouseleave="$ctrl.hideSubmenu('Sport')">
+                        <a ui-sref="category({localizedUrl: 'sport', page: null})" href="/fr/categorie/sport">Sport</a>
+                        <ul class="submenu sub-category" ng-class="{visible: $ctrl.isSubmenuVisible['Sport']}">
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Sport')">
+                                <a ui-sref="category({localizedUrl: 'velos', page: null})" href="/fr/categorie/velos">Vélos</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Sport')">
+                                <a ui-sref="category({localizedUrl: 'skateboards-electriques', page: null})" href="/fr/categorie/skateboards-electriques">Skateboards électriques</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Sport')">
+                                <a ui-sref="category({localizedUrl: 'roues-electriques', page: null})" href="/fr/categorie/roues-electriques">Roues électriques</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Sport')">
+                                <a ui-sref="category({localizedUrl: 'trackers-dactivite', page: null})" href="/fr/categorie/trackers-dactivite">Trackers d'activité</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Informatique')" ng-mouseenter="$ctrl.showSubmenu('Informatique')" ng-mouseleave="$ctrl.hideSubmenu('Informatique')">
+                        <a ui-sref="category({localizedUrl: 'informatique', page: null})" href="/fr/categorie/informatique">Informatique</a>
+                        <ul class="submenu sub-category" ng-class="{visible: $ctrl.isSubmenuVisible['Informatique']}">
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Informatique')">
+                                <a ui-sref="category({localizedUrl: 'impression-3d', page: null})" href="/fr/categorie/impression-3d">Impression 3D</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Informatique')">
+                                <a ui-sref="category({localizedUrl: 'ecrans', page: null})" href="/fr/categorie/ecrans">Écrans</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Informatique')">
+                                <a ui-sref="category({localizedUrl: 'cartes-graphiques', page: null})" href="/fr/categorie/cartes-graphiques">Cartes graphiques</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Informatique')">
+                                <a ui-sref="category({localizedUrl: 'claviers-souris', page: null})" href="/fr/categorie/claviers-souris">Claviers et souris</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Informatique')">
+                                <a ui-sref="category({localizedUrl: 'sauvegarde-cloud-nas', page: null})" href="/fr/categorie/sauvegarde-cloud-nas">Sauvegarde - Cloud - NAS</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Informatique')">
+                                <a ui-sref="category({localizedUrl: 'ordinateurs', page: null})" href="/fr/categorie/ordinateurs">Ordinateurs</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Santé et beauté')" ng-mouseenter="$ctrl.showSubmenu('Santé et beauté')" ng-mouseleave="$ctrl.hideSubmenu('Santé et beauté')">
+                        <a ui-sref="category({localizedUrl: 'sante-et-beaute', page: null})" href="/fr/categorie/sante-et-beaute">Santé et beauté</a>
+                    </li>
+                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Puériculture')" ng-mouseenter="$ctrl.showSubmenu('Puériculture')" ng-mouseleave="$ctrl.hideSubmenu('Puériculture')">
+                        <a ui-sref="category({localizedUrl: 'puericulture', page: null})" href="/fr/categorie/puericulture">Puériculture</a>
+                    </li>
+                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Image')" ng-mouseenter="$ctrl.showSubmenu('Image')" ng-mouseleave="$ctrl.hideSubmenu('Image')">
+                        <a ui-sref="category({localizedUrl: 'image', page: null})" href="/fr/categorie/image">Image</a>
+                        <ul class="submenu sub-category" ng-class="{visible: $ctrl.isSubmenuVisible['Image']}">
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Image')">
+                                <a ui-sref="category({localizedUrl: 'multimedia', page: null})" href="/fr/categorie/multimedia">Multimédia</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Image')">
+                                <a ui-sref="category({localizedUrl: 'home-cinema', page: null})" href="/fr/categorie/home-cinema">Home cinéma</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Image')">
+                                <a ui-sref="category({localizedUrl: 'cameras', page: null})" href="/fr/categorie/cameras">Caméras</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Image')">
+                                <a ui-sref="category({localizedUrl: 'photo', page: null})" href="/fr/categorie/photo">Photo</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Image')">
+                                <a ui-sref="category({localizedUrl: 'tv', page: null})" href="/fr/categorie/tv">TV</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Loisirs et jouets')" ng-mouseenter="$ctrl.showSubmenu('Loisirs et jouets')" ng-mouseleave="$ctrl.hideSubmenu('Loisirs et jouets')">
+                        <a ui-sref="category({localizedUrl: 'loisirs-et-jouets', page: null})" href="/fr/categorie/loisirs-et-jouets">Loisirs et jouets</a>
+                        <ul class="submenu sub-category" ng-class="{visible: $ctrl.isSubmenuVisible['Loisirs et jouets']}">
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Loisirs et jouets')">
+                                <a ui-sref="category({localizedUrl: 'drones-et-robots', page: null})" href="/fr/categorie/drones-et-robots">Drones et robots</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Loisirs et jouets')">
+                                <a ui-sref="category({localizedUrl: 'realite-virtuelle', page: null})" href="/fr/categorie/realite-virtuelle">Réalité virtuelle</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Voitures')" ng-mouseenter="$ctrl.showSubmenu('Voitures')" ng-mouseleave="$ctrl.hideSubmenu('Voitures')">
+                        <a ui-sref="category({localizedUrl: 'voitures', page: null})" href="/fr/categorie/voitures">Voitures</a>
+                    </li>
+                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Bateaux')" ng-mouseenter="$ctrl.showSubmenu('Bateaux')" ng-mouseleave="$ctrl.hideSubmenu('Bateaux')">
+                        <a ui-sref="category({localizedUrl: 'bateaux', page: null})" href="/fr/categorie/bateaux">Bateaux</a>
+                    </li>
+                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Services')" ng-mouseenter="$ctrl.showSubmenu('Services')" ng-mouseleave="$ctrl.hideSubmenu('Services')">
+                        <a ui-sref="category({localizedUrl: 'services', page: null})" href="/fr/categorie/services">Services</a>
+                    </li>
+                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Gaming')" ng-mouseenter="$ctrl.showSubmenu('Gaming')" ng-mouseleave="$ctrl.hideSubmenu('Gaming')">
+                        <a ui-sref="category({localizedUrl: 'gaming', page: null})" href="/fr/categorie/gaming">Gaming</a>
+                        <ul class="submenu sub-category" ng-class="{visible: $ctrl.isSubmenuVisible['Gaming']}">
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Gaming')">
+                                <a ui-sref="category({localizedUrl: 'realite-virtuelle', page: null})" href="/fr/categorie/realite-virtuelle">Réalité Virtuelle</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Gaming')">
+                                <a ui-sref="category({localizedUrl: 'consoles', page: null})" href="/fr/categorie/consoles">Consoles</a>
+                            </li>
+                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Gaming')">
+                                <a ui-sref="category({localizedUrl: 'jeux-video', page: null})" href="/fr/categorie/jeux-video">Jeux vidéo</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <!-- end ngIf: !$ctrl.isDemoozer() --><!-- ngIf: !$ctrl.isLogged() -->
+            <li class="menu-item ng-scope" ng-if="!$ctrl.isLogged()">
+                <a href="#" ng-click="$ctrl.openSignInModal()">Se connecter</a>
+            </li><!-- end ngIf: !$ctrl.isLogged() -->
+            <!-- ngIf: !$ctrl.isLogged() -->
+            <li class="menu-item bordered ng-scope" ng-if="!$ctrl.isLogged()">
+                <a href="#" ng-click="$ctrl.openSignUpModal()">S'inscrire</a>
+            </li>
+            <!-- end ngIf: !$ctrl.isLogged() --><!-- ngIf: $ctrl.isLogged() --><!-- ngIf: $ctrl.isLogged() --><!-- ngIf: $ctrl.isLogged() -->
+        </ul>
+        <div class="menu-backdrop" ng-class="{'lateral-visible': $ctrl.isLateralMenuVisible}" ng-click="$ctrl.closeLateralMenu()"></div>
+    </div>
+</main-header>
+
+    <div class="main-content ng-scope" ui-view="">
+        <all-products class="ng-scope ng-isolate-scope">    
+            <div class="all-products-container wrapper">
+                <h2 class="content-title level-1">Tous les produits</h2>
+                <div class="products-container flex align-center" ng-show="$ctrl.loading === false">
+                    
+                    <!-- ngRepeat: product in $ctrl.products -->
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/oneplus-6t" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1542705740/bsw80s2udayaimqovfwm.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/oneplus-6t">
+                                <span class="ng-binding">OnePlus 6T</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">OnePlus 6T</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/magimix-cook-expert" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1472476470/cvpvhaeddpvnwwqn0tkl.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/magimix-cook-expert">
+                                <span class="ng-binding">Magimix Cook Expert</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Magimix Cook Expert</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/keecker" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1519303573/elxfbva3si59fqbayorm.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/keecker">
+                                <span class="ng-binding">Keecker</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Keecker</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope hot" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/polti-moppy" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1540897337/xzkij2dot1c3b5lc6vkt.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/polti-moppy">
+                                <span class="ng-binding">Polti MOPPY RED</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Polti MOPPY RED</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope hot" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/sowee" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1533284180/qqemj122v0t5r3svibsa.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/sowee">
+                               <span class="ng-binding">Station connectée Sowee</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Station connectée Sowee</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/kenwood-cookingchef-xl" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1530114182/urvbjgn3fe3prrnnrcmd.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/kenwood-cookingchef-xl">
+                                <span class="ng-binding">Kenwood Cooking Chef XL</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Kenwood Cooking Chef XL</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/kenwood-cooking-chef-gourmet" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1530110577/qtgjtz0llhkakv7kgvtb.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/kenwood-cooking-chef-gourmet">
+                                <span class="ng-binding">Kenwood Cooking Chef Gourmet</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Kenwood Cooking Chef Gourmet</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/silkn-fresh" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1540824667/vxfaupi9vvmnuvss0pqq.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/silkn-fresh">
+                              <span class="ng-binding">Silk'n Fresh</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Silk'n Fresh</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/dyson-v10" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1527845770/ph5rjdqkdsjuuwcql9fd.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/dyson-v10">
+                                <span class="ng-binding">Dyson Cyclone V10 Absolute</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Dyson Cyclone V10 Absolute</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/moulinex-i-companion-xl" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1511190580/r6tlpxqk6gjqvhpqw3pe.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/moulinex-i-companion-xl">
+                                <span class="ng-binding">Moulinex i-Companion XL Robot Cuiseur multifonction connecté</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Moulinex i-Companion XL Robot Cuiseur multifonction connecté</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/heineken-sub-compact" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1536568112/nobhnzaptsuwooohmpr0.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/heineken-sub-compact">
+                                <span class="ng-binding">The Sub® Compact</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">The Sub® Compact</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/sennheiser-casque-PXC550" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1533904411/vnicwwlonsuz46lfovzd.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/sennheiser-casque-PXC550">
+                                <span class="ng-binding">Casque Sennheiser PXC 550 Wireless</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Casque Sennheiser PXC 550 Wireless</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/sonos-one" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1541428900/taj5pvpzkd43w49jmioi.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/sonos-one">
+                                <span class="ng-binding">SONOS ONE</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">SONOS ONE</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/eye-lights" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1542280179/obylmz7vpuzufrdnltja.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/eye-lights">
+                                <span class="ng-binding">EyeLights</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">EyeLights</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/sonos-beam" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1541428999/fz0s0vyu2ijkq9sdpzcp.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/sonos-beam">
+                                <span class="ng-binding">SONOS BEAM</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">SONOS BEAM</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/coravin-modele-one" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1527840075/iji2n92hj9yeq6jykuxa.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/coravin-modele-one">
+                                <span class="ng-binding">Model One de Coravin</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Model One de Coravin</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/polti-unico-mcv80" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1540999634/m1rl5dld7k7ael8xed3u.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/polti-unico-mcv80">
+                                <span class="ng-binding">POLTI - UNICO MCV80</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">POLTI - UNICO MCV80</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/thermomix-tm5" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1472481708/hqszehrovmxyyh112nx3.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/thermomix-tm5">
+                                <span class="ng-binding">Vorwerk Thermomix TM5</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Vorwerk Thermomix TM5</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/nintendo-switch" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1487841262/hfzycdtyeddgl6ykpcee.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/nintendo-switch">
+                                <span class="ng-binding">Nintendo Switch</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Nintendo Switch</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/polaroid-pic300" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1539676712/unwggoifdy1lhbs4aess.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/polaroid-pic300">
+                                <span class="ng-binding">Polaroid PIC300</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Polaroid PIC300</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/shadow" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1497948905/dvcxztr1lyzpawkyqw1o.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/shadow">
+                                <span class="ng-binding">Shadow</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Shadow</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/dyson-v8" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1475150481/uzg0qjjh1la6hflpzz7h.png&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/dyson-v8">
+                                <span class="ng-binding">Dyson V8 Absolute</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Dyson V8 Absolute</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/playstation-4" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1477408447/ocwhqifasxg2h0nmwfhk.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/playstation-4">
+                                <span class="ng-binding">Sony Playstation 4</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Sony Playstation 4</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/dyson-supersonic" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1494927396/jnikl8vle7aeimcepos5.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/dyson-supersonic">
+                                <span class="ng-binding">Dyson Supersonic</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Dyson Supersonic</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/asus-zenbook-pro-15" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1531910644/pc7dyvlrunzh7uq9us6s.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/asus-zenbook-pro-15">
+                                <span class="ng-binding">Asus Zenbook Pro 15 UX580</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Asus Zenbook Pro 15 UX580</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/moulinex-companion-hf800" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1493395231/f6reaad4kwi6gaozryle.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/moulinex-companion-hf800">
+                                <span class="ng-binding">Moulinex Companion HF800</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Moulinex Companion HF800</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/kitchenaid-artisan" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1504625870/j56pypaht3jpns4kgmgb.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/kitchenaid-artisan">
+                                <span class="ng-binding">KitchenAid Artisan</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">KitchenAid Artisan</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/moulinex-cookeo" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1492614352/gddavavnagjnej4f07k6.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/moulinex-cookeo">
+                                <span class="ng-binding">Moulinex Cookeo</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Moulinex Cookeo</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/jbl-charge-3" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1499849881/fwiirzlrh1nhyblynqea.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/jbl-charge-3">
+                                <span class="ng-binding">JBL Charge 3</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">JBL Charge 3</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/devialet-phantom-reactor-600" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1540996588/m9wcdqqnxcbjpahywdp9.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/devialet-phantom-reactor-600">
+                                <span class="ng-binding">Devialet Phantom Reactor 600</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Devialet Phantom Reactor 600</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/apple-airpods" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1484128447/gh5zxgqzxzeqyt2q9ih7.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/apple-airpods">
+                                <span class="ng-binding">Apple AirPods</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Apple AirPods</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/nissan-leaf" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1522920313/u04dwfcldsqlikmsbscw.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/nissan-leaf">
+                                <span class="ng-binding">Nissan LEAF</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Nissan LEAF</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/apple-iphone-x" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1509114470/y1xeix6hqlq0b1bdzyjn.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/apple-iphone-x">
+                                <span class="ng-binding">Apple iPhone X</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Apple iPhone X</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/lunii-ma-fabrique-a-histoires" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1509098206/g7hwrozbs1v5ogsvbwdv.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/lunii-ma-fabrique-a-histoires">
+                                <span class="ng-binding">Lunii Ma Fabrique à Histoires</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Lunii Ma Fabrique à Histoires</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/devialet-phantom-reactor-900" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1540997811/yscrouwtyl3pux5plewl.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/devialet-phantom-reactor-900">
+                                <span class="ng-binding">Devialet Phantom Reactor 900</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Devialet Phantom Reactor 900</span>
+                    </div>
+                    <!-- end ngRepeat: product in $ctrl.products -->
+                    
+                    <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
+                        <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/philips-hue" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1512730953/ade6s2hwq2jizjnitqxk.jpg&quot;);">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/philips-hue">
+                                <span class="ng-binding">Philips Hue White &amp; color ambiance</span>
+                            </a>
+                        </div>
+                        <span class="product-name ng-binding">Philips Hue White &amp; color ambiance</span>
+                    </div><!-- end ngRepeat: product in $ctrl.products -->
+                </div>
+            <div>
+        </all-products>
+    </div>

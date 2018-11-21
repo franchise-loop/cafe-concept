@@ -1,0 +1,159 @@
+<body>
+    <div class="global-container">
+        <main-header>
+            <div class="flex align-middle container">
+                <div class="responsive-menu-icon">
+                    <button aria-label="toggle menu" class="phone-menu-btn" type="button">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                
+                <div class="columns logo shrink">
+                    <a ui-sref="homePage" href="bishal">
+                        <div class="logo-icon">
+                            <img-svg src="/images/logo-demooz.svg?v=864735d2c79a398adef84e9bfe03726a" class="ng-isolate-scope">
+                                <!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+                                <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="500" height="650.59192" viewBox="0 0 500 650.59193" class="svg-logo-demooz" version="1.1">
+                                    <path d="m 252.66662,0.06721 0,-0.0672078128 c -0.89027,0 -1.78055,0.0252029328 -2.67082,0.0336039028 C 249.10553,0.02520512 248.22366,2.1872e-6 247.33338,2.1872e-6 l 0,0.0672078128 C 110.68494,2.931943 -15.624583,115.31181 1.576155,251.1556 24.420886,431.57497 189.79322,611.33907 221.77584,638.52463 c 6.58466,5.60345 12.75778,8.87143 18.41856,10.56843 0.30236,0.10081 0.60472,0.19322 0.91547,0.27723 0.13438,0.042 0.26877,0.0756 0.39475,0.10921 1.48658,0.40325 3.04876,0.70569 4.68653,0.89891 l 0.008,0 c 0.6719,0.084 1.3522,0.13441 2.0493,0.16802 0.15958,0.0168 0.31916,0.0252 0.47873,0.0336 0.41994,0.008 0.83988,0.0168 1.26822,0.008 0.42834,0.008 0.85668,0 1.27662,-0.008 0.15118,-0.008 0.31076,-0.0168 0.47033,-0.0336 0.6971,-0.0336 1.3858,-0.084 2.05771,-0.16802 l 0,0 c 1.64616,-0.19322 3.20834,-0.49566 4.68653,-0.89891 0.13438,-0.0336 0.26876,-0.0672 0.40314,-0.10921 0.31075,-0.084 0.61311,-0.17642 0.91547,-0.27723 5.66079,-1.697 11.8339,-4.96498 18.41856,-10.56843 14.83228,-12.60987 58.12808,-57.73991 102.80969,-120.81444 4.63614,-6.98962 -0.48713,-13.92042 -0.48713,-13.92042 l 0.0252,0.0168 -65.33424,-95.92235 c -5.32484,-7.11563 -12.49742,-5.24221 -13.85802,-4.80536 -0.0504,0.0168 -0.0924,0.0336 -0.14278,0.0504 -0.0504,0.0168 -0.084,0.0252 -0.084,0.0252 l 0,0 c -14.60551,4.72135 -30.17688,7.30045 -46.36136,7.30045 -82.76176,0 -149.98574,-66.55254 -151.10278,-149.07533 -1.14224,-84.54743 68.67697,-154.37635 153.20248,-153.22542 82.49299,1.12574 149.01987,68.35875 149.01987,151.14197 0,40.79515 -16.17609,77.80145 -42.43913,104.98701 -5.92955,7.32565 -1.45299,14.26486 -1.12544,14.76052 l 44.7068,65.63683 c 0,0 9.8182,13.21473 20.73664,0.008 33.81356,-59.18488 62.12591,-126.30869 70.63389,-193.5333 C 515.62459,115.31181 389.31506,2.931943 252.66662,0.06721"></path>
+                                </svg>
+                            </img-svg>
+                        </div>
+                        <div class="logo-text">
+                            Cafe-concept
+                        </div>
+                    </a>
+                </div>
+
+                <ul id="main-menu" class="columns menu main-menu"> 
+                    <li class="menu-item ng-scope" >
+                        <a ui-sref="howItWorksPage" href="#">Comment ça marche ?</a>
+                    </li>
+                    <!-- end ngIf: !$ctrl.isLogged() -->
+                    
+                    <!-- ngIf: !$ctrl.isDemoozer() -->
+                    <li class="menu-item products ng-scope" ng-if="!$ctrl.isDemoozer()" ng-mouseenter="$ctrl.showSubmenu('allProducts')" ng-mouseleave="$ctrl.hideSubmenu('allProducts')">
+                        <a ui-sref="allProducts" ng-click="$ctrl.hideSubmenu('allProducts')" href="bishal2">Toutes les enseignes</a>
+                    </li>
+                    <!-- end ngIf: !$ctrl.isDemoozer() --><!-- ngIf: !$ctrl.isLogged() -->
+                    
+                    <li class="menu-item ng-scope" ng-if="!$ctrl.isLogged()">
+                        <a href="bishal3" ng-click="$ctrl.openSignInModal()">Se connecter</a>
+                    </li>
+                    <!-- end ngIf: !$ctrl.isLogged() -->
+                    
+                    <!-- ngIf: !$ctrl.isLogged() -->
+                    <li class="menu-item bordered ng-scope" ng-if="!$ctrl.isLogged()">
+                        <a href="#" ng-click="$ctrl.openSignUpModal()">S'inscrire</a>
+                    </li>
+                    <!-- end ngIf: !$ctrl.isLogged() --><!-- ngIf: $ctrl.isLogged() --><!-- ngIf: $ctrl.isLogged() --><!-- ngIf: $ctrl.isLogged() -->
+                </ul>                
+
+                <div class="menu-backdrop"></div>
+            </div>
+
+            <!-- ngIf: $ctrl.$state.current.name === 'homePage' -->
+        </main-header>
+        
+        <!-- uiView: -->
+        <div class="main-content ng-scope" ui-view="">
+            <product product="::$resolve.product" class="ng-scope ng-isolate-scope">
+                <div class="container-header">
+                    <div class="header">
+                        <div class="header-img">
+                            <div class="part part-image">
+                                <img src="https://res.cloudinary.com/demooz/image/upload/v1472476470/cvpvhaeddpvnwwqn0tkl.jpg" alt="Magimix Cook Expert">
+                            </div>
+                        </div>
+                    
+                    <div class="part part-text">
+                        <article>
+                            <header>
+                                <h1 class="level-1 ng-binding"> Nom du Enseignes </h1>
+                                
+                            </header>
+                            
+                            <p class="short-description ng-binding">
+                                Cuisinez en toute simplicité de nombreux plats chauds grâce à l’induction : risottos, soupes, mijotés, cuissons vapeur, purées,… et froids : râpés de carottes, pains, mousses au chocolat ou desserts glacés.
+                            </p>
+                            
+                            <div class="actions">
+                                <button class="btn ng-scope" >Je veux le tester !</button>
+                                
+                                <button class="btn have-it dark ng-scope" >Je l'ai !</button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="wrapper">
+                        <div class="around-me">
+                            <h2 class="content-title level-2">Ils l'ont autour de moi</h2>
+                            <map class="map-cmp ng-isolate-scope ng-scope" data-intro="<h6>À côté de chez vous</h6>Cette carte vous permet de visualiser toutes les personnes disponibles à proximité de vous, prêtes à vous faire tester le produit." data-position="top">
+                                <div class="geolocalise-tools">
+                                    <form class="search-city" >
+                                        <autocomplete class="search-autocomplete ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-included-in-suggestions" placeholder="Trouver votre enseigne...">
+                                            <input type="text" autocomplete="nope" required="{{$ctrl.required}}" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" placeholder="Trouver votre enseigne...">
+                                            <div class="suggestions"></div>
+                                        </autocomplete>
+                                        
+                                        <div class="search-button">
+                                            <i class="fa fa-search icon" aria-hidden="true"></i>
+                                        </div>
+                                    </form>
+                                    
+                                    <div class="geolocalise">
+                                        <img alt="localise user" src="/images/target.svg?v=14c1e783df5744e66ba1bdee94cb638e">
+                                    </div>
+                                </div>
+                                
+                                <div id="map-614620" class="map">
+                                    <div class="ol-viewport" data-view="1024" style="position: relative; overflow: hidden; width: 100%; height: 100%; touch-action: none;">
+                                        <canvas class="ol-unselectable" width="936" height="500" style="width: 100%; height: 100%; display: none;"></canvas>
+                                        <div class="ol-overlaycontainer">
+                                            <div class="ol-overlay-container ol-selectable" style="position: absolute; left: 452px; top: 131px;">
+                                                <user-overlay user="{&quot;reviews&quot;:{&quot;count&quot;:0},&quot;profile&quot;:{&quot;firstName&quot;:&quot;Sebastien&quot;,&quot;lastName&quot;:&quot;D.&quot;,&quot;avatar&quot;:&quot;https://res.cloudinary.com/demooz/image/upload/v1509462851/ak0419j8pl3wtyi2jub3.jpg&quot;},&quot;username&quot;:&quot;sderlincourt&quot;,&quot;_id&quot;:&quot;59f89343e885f600123c6f55&quot;,&quot;isOnline&quot;:false}" location="[249190.4696634092,6248026.394542248]" id="5a2fd51148a1b70014c76e8e" class="ng-scope ng-isolate-scope">
+                                                    <div class="wrapper" >
+                                                        <div class="container" >
+                                                            <div class="avatar" ng-class="{'user-online': $ctrl.user.isOnline}" ng-style="$ctrl.user.profile.avatar ? {'background-image': 'url(' + $ctrl.user.profile.avatar + ')'} : {}" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1509462851/ak0419j8pl3wtyi2jub3.jpg&quot;);"></div>
+                                                            <div class="infos">
+                                                                <div class="infos-user">
+                                                                    <div class="name ng-binding">Sebastien D.</div>
+                                                                </div>
+                                                                <button type="button" class="action btn" >
+                                                                    <i class="fa fa-comment icon" aria-hidden="true"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </user-overlay>
+                                            </div>
+                                            <div class="ol-overlay-container ol-selectable" style="position: absolute; left: 437px; top: 366px;">
+                                                <user-overlay user="{&quot;reviews&quot;:{&quot;count&quot;:2,&quot;avg&quot;:5},&quot;profile&quot;:{&quot;lastName&quot;:&quot;D.&quot;,&quot;firstName&quot;:&quot;Claudia&quot;,&quot;avatar&quot;:&quot;https://res.cloudinary.com/demooz/image/upload/v1/demooz-production/13613393_10153529750906924_4349867747412190589_o_wrkjvr&quot;},&quot;username&quot;:&quot;claudiadevillaz&quot;,&quot;_id&quot;:&quot;57381d44c4ed630e00f57fbb&quot;,&quot;isOnline&quot;:false}" location="[248892.97382996642,6243528.933365991]" id="579f4dbfc4f7b50e00dba267" class="ng-scope ng-isolate-scope">
+                                                    <div class="wrapper" ng-class="{open: $ctrl.isOpen, hover: $ctrl.isHover}">
+                                                        <div class="container" ng-class="{open: $ctrl.isOpen, hover: $ctrl.isHover}" >
+                                                            <div class="avatar" ng-class="{'user-online': $ctrl.user.isOnline}" ng-style="$ctrl.user.profile.avatar ? {'background-image': 'url(' + $ctrl.user.profile.avatar + ')'} : {}" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1/demooz-production/13613393_10153529750906924_4349867747412190589_o_wrkjvr&quot;);"></div>
+                                                            <div class="infos">
+                                                                <div class="infos-user">
+                                                                    <div class="name ng-binding">Claudia D.</div>
+                                                                </div>
+                                                                <button type="button" class="action btn" >
+                                                                    <i class="fa fa-comment icon" aria-hidden="true"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </user-overlay>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </map>
+                        </div>
+                    </div>
+                </div>
+            </product>
+        </div>
+    </div>
+</body>

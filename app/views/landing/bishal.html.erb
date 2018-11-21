@@ -37,7 +37,7 @@
             
             <!-- ngIf: !$ctrl.isDemoozer() -->
             <li class="menu-item products ng-scope" ng-if="!$ctrl.isDemoozer()" ng-mouseenter="$ctrl.showSubmenu('allProducts')" ng-mouseleave="$ctrl.hideSubmenu('allProducts')">
-                <a ui-sref="allProducts" ng-click="$ctrl.hideSubmenu('allProducts')" href="bishal2">Tous les produits</a>
+                <a ui-sref="allProducts" ng-click="$ctrl.hideSubmenu('allProducts')" href="bishal2">Toutes les enseignes</a>
                 <ul class="submenu menu vertical" ng-class="{visible: $ctrl.isSubmenuVisible['allProducts']}">
                     <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')" ng-mouseenter="$ctrl.showSubmenu('Smartphones')" ng-mouseleave="$ctrl.hideSubmenu('Smartphones')">
                         <a ui-sref="category({localizedUrl: 'smartphones', page: null})" href="/fr/categorie/smartphones">Smartphones</a>
@@ -244,7 +244,7 @@
             </li>
             <!-- end ngIf: !$ctrl.isDemoozer() --><!-- ngIf: !$ctrl.isLogged() -->
             <li class="menu-item ng-scope" ng-if="!$ctrl.isLogged()">
-                <a href="#" ng-click="$ctrl.openSignInModal()">Se connecter</a>
+                <a href="bishal3" ng-click="$ctrl.openSignInModal()">Se connecter</a>
             </li><!-- end ngIf: !$ctrl.isLogged() -->
             <!-- ngIf: !$ctrl.isLogged() -->
             <li class="menu-item bordered ng-scope" ng-if="!$ctrl.isLogged()">
@@ -257,6 +257,7 @@
 </main-header>
 <div class="main-content ng-scope" ui-view="">
     <home-page class="ng-scope ng-isolate-scope">
+
         <jumbotron class="ng-isolate-scope">
             <header>
                 <tagline class="ng-isolate-scope">
@@ -278,6 +279,7 @@
                     </button>
                 </form>
             </search-bar>
+            
             <photos-wave class="ng-isolate-scope">
                 <img class="photo-animation" src="https://res.cloudinary.com/demooz/image/upload/v1522767863/k9yvt5w7mwygk512ocld.jpg">
                 <img class="photo-animation" src="https://res.cloudinary.com/demooz/image/upload/v1522767872/yb6kdw6fdkbl36aghzlg.jpg">
@@ -291,6 +293,7 @@
                 <img class="photo-animation" src="https://res.cloudinary.com/demooz/image/upload/v1522769112/xjwrhhynbrbrt8de0zkf.jpg">
             </photos-wave>
         </jumbotron>
+
         <how-it-works-banner ng-show="!$ctrl.isLogged" class="ng-isolate-scope ng-scope">
             <div class="banner">
                 <div class="banner-content wrapper">
@@ -298,6 +301,8 @@
                         <div class="step">
                             <h2 class="step-title">Une franchise en vue?</h2>
                             <p class="step-text content-description">Retrouvez des centaines de concepts à découvrir près de chez vous.</p>
+                            
+                            
                             <img-svg src="/images/illustrations/choose/banner.svg?v=4084f5e99ca68cee96dd3089df52abe8" class="ng-isolate-scope"><!--?xml version="1.0" encoding="UTF-8"?-->
                                 <svg width="207px" height="273px" viewBox="0 0 207 273" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
@@ -1091,6 +1096,12 @@
                                     </g>
                                 </svg>
                             </img-svg>
+
+
+                            
+
+                            <img class="w-75 mb-3" src="../app/assets/images/svg/analysis-flat-concept-illustration.svg" alt="SVG Illustration">
+
                         </div>
 
                         <div class="step">
@@ -10996,116 +11007,6 @@
             </div>
         </around-me-banner>
 
-        <trends class="ng-isolate-scope ng-scope">
-            <div class="wrapper">
-                <h2 class="content-title level-2">Les produits à la une</h2>
-                <p class="content-description">Découvrez toutes les tendances du moment à tester ou à ajouter absolument.</p><div class="flex align-center">
-                <products-wall load-products-on-scroll="false" items-per-page="8" class="ng-isolate-scope">
-                    <div class="products-wall align-center">
-                        <!-- ngRepeat: product in $ctrl.products -->
-                        <div ng-repeat="product in $ctrl.products" class="product-container ng-scope">
-                            <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" ng-class="{'hot': product.isHot,'new': product.isNew}" href="/fr/produit/magimix-cook-expert" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1472476470/cvpvhaeddpvnwwqn0tkl.jpg&quot;);">
-                                <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/magimix-cook-expert">
-                                    <!-- <join-continuum-loader ng-if='$ctrl.continuumMode'></join-continuum-loader> -->
-                                    <span class="ng-binding">Magimix Cook Expert</span>
-                                </a>
-                                <div class="product-marker"></div>
-                            </div>
-                            <!-- ngIf: $ctrl.withProductName -->
-                        </div>
-                        <!-- end ngRepeat: product in $ctrl.products -->
-
-                        <div ng-repeat="product in $ctrl.products" class="product-container ng-scope">
-                            <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" ng-class="{'hot': product.isHot,'new': product.isNew}" href="/fr/produit/keecker" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1519303573/elxfbva3si59fqbayorm.jpg&quot;);">
-                                <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/keecker">
-                                    <!-- <join-continuum-loader ng-if='$ctrl.continuumMode'></join-continuum-loader> -->
-                                <span class="ng-binding">Keecker</span>
-                                </a>
-                                <div class="product-marker"></div>
-                            </div>
-                            <!-- ngIf: $ctrl.withProductName -->
-                        </div><!-- end ngRepeat: product in $ctrl.products -->
-
-                        <div ng-repeat="product in $ctrl.products" class="product-container ng-scope">
-                            <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" ng-class="{'hot': product.isHot,'new': product.isNew}" href="/fr/produit/polti-moppy" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1540897337/xzkij2dot1c3b5lc6vkt.jpg&quot;);">
-                                <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/polti-moppy">
-                                    <!-- <join-continuum-loader ng-if='$ctrl.continuumMode'></join-continuum-loader> -->
-                                    <span class="ng-binding">Polti MOPPY RED</span>
-                                </a>
-                                <div class="product-marker"></div>
-                            </div>
-                            <!-- ngIf: $ctrl.withProductName -->
-                        </div>
-                        <!-- end ngRepeat: product in $ctrl.products -->
-                        
-                        <div ng-repeat="product in $ctrl.products" class="product-container ng-scope">
-                            <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" ng-class="{'hot': product.isHot,'new': product.isNew}" href="/fr/produit/sowee" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1533284180/qqemj122v0t5r3svibsa.jpg&quot;);">
-                                <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/sowee">
-                                    <!-- <join-continuum-loader ng-if='$ctrl.continuumMode'></join-continuum-loader> -->
-                                    <span class="ng-binding">Station connectée Sowee</span>
-                                </a>
-                                <div class="product-marker"></div>
-                            </div>
-                            <!-- ngIf: $ctrl.withProductName -->
-                        </div>
-                        <!-- end ngRepeat: product in $ctrl.products -->
-                        
-                        <div ng-repeat="product in $ctrl.products" class="product-container ng-scope">
-                            <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" ng-class="{'hot': product.isHot,'new': product.isNew}" href="/fr/produit/kenwood-cookingchef-xl" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1530114182/urvbjgn3fe3prrnnrcmd.jpg&quot;);">
-                                <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/kenwood-cookingchef-xl">
-                                    <!-- <join-continuum-loader ng-if='$ctrl.continuumMode'></join-continuum-loader> -->
-                                    <span class="ng-binding">Kenwood Cooking Chef XL</span>
-                                </a>
-                                <div class="product-marker"></div>
-                            </div>
-                            <!-- ngIf: $ctrl.withProductName -->
-                        </div>
-                        <!-- end ngRepeat: product in $ctrl.products -->
-                        
-                        <div ng-repeat="product in $ctrl.products" class="product-container ng-scope">
-                            <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" ng-class="{'hot': product.isHot,'new': product.isNew}" href="/fr/produit/kenwood-cooking-chef-gourmet" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1530110577/qtgjtz0llhkakv7kgvtb.jpg&quot;);">
-                                <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/kenwood-cooking-chef-gourmet">
-                                    <!-- <join-continuum-loader ng-if='$ctrl.continuumMode'></join-continuum-loader> -->
-                                    <span class="ng-binding">Kenwood Cooking Chef Gourmet</span>
-                                </a>
-                                <div class="product-marker"></div>
-                            </div>
-                            <!-- ngIf: $ctrl.withProductName -->
-                        </div>
-                        <!-- end ngRepeat: product in $ctrl.products -->
-                    
-                        <div ng-repeat="product in $ctrl.products" class="product-container ng-scope">
-                            <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" ng-class="{'hot': product.isHot,'new': product.isNew}" href="/fr/produit/silkn-fresh" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1540824667/vxfaupi9vvmnuvss0pqq.jpg&quot;);">
-                                <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/silkn-fresh">
-                                    <!-- <join-continuum-loader ng-if='$ctrl.continuumMode'></join-continuum-loader> -->
-                                    <span class="ng-binding">Silk'n Fresh</span>
-                                </a>
-                                <div class="product-marker"></div>
-                            </div>
-                            <!-- ngIf: $ctrl.withProductName -->
-                        </div>
-                        <!-- end ngRepeat: product in $ctrl.products -->
-                        
-                        <div ng-repeat="product in $ctrl.products" class="product-container ng-scope">
-                            <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" ng-class="{'hot': product.isHot,'new': product.isNew}" href="/fr/produit/dyson-v10" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1527845770/ph5rjdqkdsjuuwcql9fd.jpg&quot;);">
-                                <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/dyson-v10">
-                                    <!-- <join-continuum-loader ng-if='$ctrl.continuumMode'></join-continuum-loader> -->
-                                    <span class="ng-binding">Dyson Cyclone V10 Absolute</span>
-                                </a>
-                                <div class="product-marker"></div>
-                            </div>
-                            <!-- ngIf: $ctrl.withProductName -->
-                        </div>
-                        <!-- end ngRepeat: product in $ctrl.products -->
-                    </div>
-                </products-wall>
-                
-                <div class="more-products">
-                    <a class="btn" ui-sref="allProducts" href="/fr/tous-les-produits">+ de produits</a>
-                </div>
-            </div>
-        </trends>
-
         <recruitment-banner class="ng-isolate-scope ng-scope">
             <div class="container wrapper">
                 <div class="text wrapper">
@@ -11128,7 +11029,7 @@
         <testimonial data="$ctrl.dataTestimonial" ng-show="!$ctrl.isLogged" class="ng-isolate-scope ng-scope">
             <div class="wrapper">
                 <div class="head">
-                    <h2 class="content-title level-2 ng-binding">ils nous aiment</h2>
+                    <h2 class="content-title newTitle level-2 ng-binding">ils nous aiment</h2>
                     <p class="content-description ng-binding">La vérité sort de la bouche de notre communauté !</p>
                 </div>
                 <testimonial-carousel data="$ctrl.data" class="ng-isolate-scope">
@@ -11168,7 +11069,7 @@
 
         <topics class="ng-isolate-scope ng-scope">
             <div class="wrapper">
-                <h2 class="content-title level-2">Inspirations</h2>
+                <h2 class="content-title newTitle level-2">Inspirations</h2>
                 <p class="content-description mb-1">Passionné de food? de coiffure ou de déco?</p>
                 <p class="content-description">Découvrez tous les concepts en quelques (milliers d’) images</p>
                 <div class="flex align-center">
@@ -11203,6 +11104,6 @@
             </div>
         </topics>
 
-
     </home-page>
+    
 </div>

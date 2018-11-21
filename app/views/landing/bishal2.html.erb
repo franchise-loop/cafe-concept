@@ -37,215 +37,15 @@
             
             <!-- ngIf: !$ctrl.isDemoozer() -->
             <li class="menu-item products ng-scope" ng-if="!$ctrl.isDemoozer()" ng-mouseenter="$ctrl.showSubmenu('allProducts')" ng-mouseleave="$ctrl.hideSubmenu('allProducts')">
-                <a ui-sref="allProducts" ng-click="$ctrl.hideSubmenu('allProducts')" href="bishal2">Tous les produits</a>
-                <ul class="submenu menu vertical" ng-class="{visible: $ctrl.isSubmenuVisible['allProducts']}">
-                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')" ng-mouseenter="$ctrl.showSubmenu('Smartphones')" ng-mouseleave="$ctrl.hideSubmenu('Smartphones')">
-                        <a ui-sref="category({localizedUrl: 'smartphones', page: null})" href="/fr/categorie/smartphones">Smartphones</a>
-                        <ul class="submenu sub-category" ng-class="{visible: $ctrl.isSubmenuVisible['Smartphones']}">
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
-                                <a ui-sref="category({localizedUrl: 'oneplus', page: null})" href="/fr/categorie/oneplus">OnePlus</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
-                                <a ui-sref="category({localizedUrl: 'xperia', page: null})" href="/fr/categorie/xperia">Xperia</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
-                                <a ui-sref="category({localizedUrl: 'wiko', page: null})" href="/fr/categorie/wiko">Wiko</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
-                                <a ui-sref="category({localizedUrl: 'nokia', page: null})" href="/fr/categorie/nokia">Nokia</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
-                                <a ui-sref="category({localizedUrl: 'blackberry', page: null})" href="/fr/categorie/blackberry">BlackBerry</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
-                                <a ui-sref="category({localizedUrl: 'asus', page: null})" href="/fr/categorie/asus">Asus</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
-                                <a ui-sref="category({localizedUrl: 'motorola', page: null})" href="/fr/categorie/motorola">Motorola</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
-                                <a ui-sref="category({localizedUrl: 'huawei', page: null})" href="/fr/categorie/huawei">Huawei</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
-                                <a ui-sref="category({localizedUrl: 'lg', page: null})" href="/fr/categorie/lg">LG</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
-                                <a ui-sref="category({localizedUrl: 'google-phones', page: null})" href="/fr/categorie/google-phones">Google</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
-                                <a ui-sref="category({localizedUrl: 'honor', page: null})" href="/fr/categorie/honor">Honor</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
-                                <a ui-sref="category({localizedUrl: 'samsung', page: null})" href="/fr/categorie/samsung">Samsung</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Smartphones')">
-                                <a ui-sref="category({localizedUrl: 'apple', page: null})" href="/fr/categorie/apple">Apple</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Son')" ng-mouseenter="$ctrl.showSubmenu('Son')" ng-mouseleave="$ctrl.hideSubmenu('Son')">
-                        <a ui-sref="category({localizedUrl: 'son', page: null})" href="/fr/categorie/son">Son</a>
-                        <ul class="submenu sub-category" ng-class="{visible: $ctrl.isSubmenuVisible['Son']}">
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Son')">
-                                <a ui-sref="category({localizedUrl: 'ecouteurs', page: null})" href="/fr/categorie/ecouteurs">Écouteurs</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Son')">
-                                <a ui-sref="category({localizedUrl: 'casques', page: null})" href="/fr/categorie/casques">Casques</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Son')">
-                                <a ui-sref="category({localizedUrl: 'enceintes', page: null})" href="/fr/categorie/enceintes">Enceintes</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Maison')" ng-mouseenter="$ctrl.showSubmenu('Maison')" ng-mouseleave="$ctrl.hideSubmenu('Maison')">
-                        <a ui-sref="category({localizedUrl: 'maison', page: null})" href="/fr/categorie/maison">Maison</a>
-                        <ul class="submenu sub-category" ng-class="{visible: $ctrl.isSubmenuVisible['Maison']}">
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Maison')">
-                                <a ui-sref="category({localizedUrl: 'literie', page: null})" href="/fr/categorie/literie">Literie</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Maison')">
-                                <a ui-sref="category({localizedUrl: 'entretien-de-la-maison', page: null})" href="/fr/categorie/entretien-de-la-maison">Entretien de la maison</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Maison')">
-                                <a ui-sref="category({localizedUrl: 'domotique', page: null})" href="/fr/categorie/domotique">Domotique</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Maison')">
-                                <a ui-sref="category({localizedUrl: 'gros-electromenager', page: null})" href="/fr/categorie/gros-electromenager">Gros électroménager</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Maison')">
-                                <a ui-sref="category({localizedUrl: 'bricolage', page: null})" href="/fr/categorie/bricolage">Bricolage</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Maison')">
-                                <a ui-sref="category({localizedUrl: 'jardin', page: null})" href="/fr/categorie/jardin">Jardin</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Maison')">
-                                <a ui-sref="category({localizedUrl: 'cuisine', page: null})" href="/fr/categorie/cuisine">Cuisine</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Maison')">
-                                <a ui-sref="category({localizedUrl: 'economies-energie', page: null})" href="/fr/categorie/economies-energie">Économies d'énergie</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Mobilité')" ng-mouseenter="$ctrl.showSubmenu('Mobilité')" ng-mouseleave="$ctrl.hideSubmenu('Mobilité')">
-                        <a ui-sref="category({localizedUrl: 'mobility', page: null})" href="/fr/categorie/mobility">Mobilité</a>
-                        <ul class="submenu sub-category" ng-class="{visible: $ctrl.isSubmenuVisible['Mobilité']}">
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Mobilité')">
-                                <a ui-sref="category({localizedUrl: 'montres-connectees', page: null})" href="/fr/categorie/montres-connectees">Montres connectées</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Mobilité')">
-                                <a ui-sref="category({localizedUrl: 'gps', page: null})" href="/fr/categorie/gps">GPS</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Mobilité')">
-                                <a ui-sref="category({localizedUrl: 'tablettes', page: null})" href="/fr/categorie/tablettes">Tablettes</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Sport')" ng-mouseenter="$ctrl.showSubmenu('Sport')" ng-mouseleave="$ctrl.hideSubmenu('Sport')">
-                        <a ui-sref="category({localizedUrl: 'sport', page: null})" href="/fr/categorie/sport">Sport</a>
-                        <ul class="submenu sub-category" ng-class="{visible: $ctrl.isSubmenuVisible['Sport']}">
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Sport')">
-                                <a ui-sref="category({localizedUrl: 'velos', page: null})" href="/fr/categorie/velos">Vélos</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Sport')">
-                                <a ui-sref="category({localizedUrl: 'skateboards-electriques', page: null})" href="/fr/categorie/skateboards-electriques">Skateboards électriques</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Sport')">
-                                <a ui-sref="category({localizedUrl: 'roues-electriques', page: null})" href="/fr/categorie/roues-electriques">Roues électriques</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Sport')">
-                                <a ui-sref="category({localizedUrl: 'trackers-dactivite', page: null})" href="/fr/categorie/trackers-dactivite">Trackers d'activité</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Informatique')" ng-mouseenter="$ctrl.showSubmenu('Informatique')" ng-mouseleave="$ctrl.hideSubmenu('Informatique')">
-                        <a ui-sref="category({localizedUrl: 'informatique', page: null})" href="/fr/categorie/informatique">Informatique</a>
-                        <ul class="submenu sub-category" ng-class="{visible: $ctrl.isSubmenuVisible['Informatique']}">
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Informatique')">
-                                <a ui-sref="category({localizedUrl: 'impression-3d', page: null})" href="/fr/categorie/impression-3d">Impression 3D</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Informatique')">
-                                <a ui-sref="category({localizedUrl: 'ecrans', page: null})" href="/fr/categorie/ecrans">Écrans</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Informatique')">
-                                <a ui-sref="category({localizedUrl: 'cartes-graphiques', page: null})" href="/fr/categorie/cartes-graphiques">Cartes graphiques</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Informatique')">
-                                <a ui-sref="category({localizedUrl: 'claviers-souris', page: null})" href="/fr/categorie/claviers-souris">Claviers et souris</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Informatique')">
-                                <a ui-sref="category({localizedUrl: 'sauvegarde-cloud-nas', page: null})" href="/fr/categorie/sauvegarde-cloud-nas">Sauvegarde - Cloud - NAS</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Informatique')">
-                                <a ui-sref="category({localizedUrl: 'ordinateurs', page: null})" href="/fr/categorie/ordinateurs">Ordinateurs</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Santé et beauté')" ng-mouseenter="$ctrl.showSubmenu('Santé et beauté')" ng-mouseleave="$ctrl.hideSubmenu('Santé et beauté')">
-                        <a ui-sref="category({localizedUrl: 'sante-et-beaute', page: null})" href="/fr/categorie/sante-et-beaute">Santé et beauté</a>
-                    </li>
-                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Puériculture')" ng-mouseenter="$ctrl.showSubmenu('Puériculture')" ng-mouseleave="$ctrl.hideSubmenu('Puériculture')">
-                        <a ui-sref="category({localizedUrl: 'puericulture', page: null})" href="/fr/categorie/puericulture">Puériculture</a>
-                    </li>
-                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Image')" ng-mouseenter="$ctrl.showSubmenu('Image')" ng-mouseleave="$ctrl.hideSubmenu('Image')">
-                        <a ui-sref="category({localizedUrl: 'image', page: null})" href="/fr/categorie/image">Image</a>
-                        <ul class="submenu sub-category" ng-class="{visible: $ctrl.isSubmenuVisible['Image']}">
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Image')">
-                                <a ui-sref="category({localizedUrl: 'multimedia', page: null})" href="/fr/categorie/multimedia">Multimédia</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Image')">
-                                <a ui-sref="category({localizedUrl: 'home-cinema', page: null})" href="/fr/categorie/home-cinema">Home cinéma</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Image')">
-                                <a ui-sref="category({localizedUrl: 'cameras', page: null})" href="/fr/categorie/cameras">Caméras</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Image')">
-                                <a ui-sref="category({localizedUrl: 'photo', page: null})" href="/fr/categorie/photo">Photo</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Image')">
-                                <a ui-sref="category({localizedUrl: 'tv', page: null})" href="/fr/categorie/tv">TV</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Loisirs et jouets')" ng-mouseenter="$ctrl.showSubmenu('Loisirs et jouets')" ng-mouseleave="$ctrl.hideSubmenu('Loisirs et jouets')">
-                        <a ui-sref="category({localizedUrl: 'loisirs-et-jouets', page: null})" href="/fr/categorie/loisirs-et-jouets">Loisirs et jouets</a>
-                        <ul class="submenu sub-category" ng-class="{visible: $ctrl.isSubmenuVisible['Loisirs et jouets']}">
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Loisirs et jouets')">
-                                <a ui-sref="category({localizedUrl: 'drones-et-robots', page: null})" href="/fr/categorie/drones-et-robots">Drones et robots</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Loisirs et jouets')">
-                                <a ui-sref="category({localizedUrl: 'realite-virtuelle', page: null})" href="/fr/categorie/realite-virtuelle">Réalité virtuelle</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Voitures')" ng-mouseenter="$ctrl.showSubmenu('Voitures')" ng-mouseleave="$ctrl.hideSubmenu('Voitures')">
-                        <a ui-sref="category({localizedUrl: 'voitures', page: null})" href="/fr/categorie/voitures">Voitures</a>
-                    </li>
-                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Bateaux')" ng-mouseenter="$ctrl.showSubmenu('Bateaux')" ng-mouseleave="$ctrl.hideSubmenu('Bateaux')">
-                        <a ui-sref="category({localizedUrl: 'bateaux', page: null})" href="/fr/categorie/bateaux">Bateaux</a>
-                    </li>
-                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Services')" ng-mouseenter="$ctrl.showSubmenu('Services')" ng-mouseleave="$ctrl.hideSubmenu('Services')">
-                        <a ui-sref="category({localizedUrl: 'services', page: null})" href="/fr/categorie/services">Services</a>
-                    </li>
-                    <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Gaming')" ng-mouseenter="$ctrl.showSubmenu('Gaming')" ng-mouseleave="$ctrl.hideSubmenu('Gaming')">
-                        <a ui-sref="category({localizedUrl: 'gaming', page: null})" href="/fr/categorie/gaming">Gaming</a>
-                        <ul class="submenu sub-category" ng-class="{visible: $ctrl.isSubmenuVisible['Gaming']}">
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Gaming')">
-                                <a ui-sref="category({localizedUrl: 'realite-virtuelle', page: null})" href="/fr/categorie/realite-virtuelle">Réalité Virtuelle</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Gaming')">
-                                <a ui-sref="category({localizedUrl: 'consoles', page: null})" href="/fr/categorie/consoles">Consoles</a>
-                            </li>
-                            <li class="menu-item" ng-click="$ctrl.hideSubmenu('allProducts'); $ctrl.hideSubmenu('Gaming')">
-                                <a ui-sref="category({localizedUrl: 'jeux-video', page: null})" href="/fr/categorie/jeux-video">Jeux vidéo</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+                <a ui-sref="allProducts" ng-click="$ctrl.hideSubmenu('allProducts')" href="bishal2">Toutes les enseignes</a>
             </li>
             <!-- end ngIf: !$ctrl.isDemoozer() --><!-- ngIf: !$ctrl.isLogged() -->
+            
             <li class="menu-item ng-scope" ng-if="!$ctrl.isLogged()">
-                <a href="#" ng-click="$ctrl.openSignInModal()">Se connecter</a>
-            </li><!-- end ngIf: !$ctrl.isLogged() -->
+                <a href="bishal3" ng-click="$ctrl.openSignInModal()">Se connecter</a>
+            </li>
+            <!-- end ngIf: !$ctrl.isLogged() -->
+            
             <!-- ngIf: !$ctrl.isLogged() -->
             <li class="menu-item bordered ng-scope" ng-if="!$ctrl.isLogged()">
                 <a href="#" ng-click="$ctrl.openSignUpModal()">S'inscrire</a>
@@ -259,13 +59,13 @@
     <div class="main-content ng-scope" ui-view="">
         <all-products class="ng-scope ng-isolate-scope">    
             <div class="all-products-container wrapper">
-                <h2 class="content-title level-1">Tous les produits</h2>
+                <h2 class="content-title newTitle w-50 level-1">Toutes les enseignes</h2>
                 <div class="products-container flex align-center" ng-show="$ctrl.loading === false">
                     
                     <!-- ngRepeat: product in $ctrl.products -->
                     <div class="product-container ng-scope" ng-repeat="product in $ctrl.products" ng-class="::{'hot': product.isHot,'new': product.isNew}">
                         <div ui-sref="product({id: product._id, show: null, q: null})" class="product-thumbnail" ng-style="product.picture ? {'background-image': 'url(' + product.picture +')'} : {}" href="/fr/produit/oneplus-6t" style="background-image: url(&quot;https://res.cloudinary.com/demooz/image/upload/v1542705740/bsw80s2udayaimqovfwm.jpg&quot;);">
-                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="/fr/produit/oneplus-6t">
+                            <a class="hover" ui-sref="product({id: product._id, show: null, q: null})" href="bishal3">
                                 <span class="ng-binding">OnePlus 6T</span>
                             </a>
                         </div>
